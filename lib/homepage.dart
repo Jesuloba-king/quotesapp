@@ -134,34 +134,36 @@ class _SecondPageState extends State<SecondPage> {
                   ),
                 ),
 
-                const SizedBox(height: 5,),
+                // const SizedBox(height: 5,),
 
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     CupertinoButton(child: const Icon(CupertinoIcons.heart,
                         color: CupertinoColors.destructiveRed),
-                        onPressed: (){}),
+                        onPressed: (){
+                      const Icon(CupertinoIcons.heart_solid,
+                        color: Colors.red,);
+                        }),
                     CupertinoButton(child: const Icon(CupertinoIcons.share_up,
                       color: CupertinoColors.destructiveRed,),
-                      onPressed: (){}),
-                      //   onPressed: (){
-                      // showCupertinoDialog(context: context, builder: (BuildContext contxt){
-                      //   return SimpleDialog(
-                      //     title: const Text("Option"),
-                      //     children:<Widget> [
-                      //       SimpleDialogOption(
-                      //         onPressed: () { Navigator.of(contxt).pop(); },
-                      //         child: const Text('Copy'),
-                      //       ),
-                      //       SimpleDialogOption(
-                      //         onPressed: () { Navigator.of(contxt).pop(); },
-                      //         child: const Text('Share'),
-                      //       ),
-                      //     ],
-                      //   );
-                      // });
-                      //   }),
+                        onPressed: (){
+                      showCupertinoDialog(context: context, builder: (BuildContext contxt){
+                        return SimpleDialog(
+                          title: const Text("Option"),
+                          children:<Widget> [
+                            SimpleDialogOption(
+                              onPressed: () { Navigator.of(contxt).pop(); },
+                              child: const Text('Copy text'),
+                            ),
+                            SimpleDialogOption(
+                              onPressed: () { Navigator.of(contxt).pop(); },
+                              child: const Text('Share Quote'),
+                            ),
+                          ],
+                        );
+                      });
+                        }),
                   ],
                 ),
               ],
