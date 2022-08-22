@@ -143,7 +143,7 @@ class _SecondPageState extends State<SecondPage> {
                         color: CupertinoColors.destructiveRed),
                         onPressed: (){
                       const Icon(CupertinoIcons.heart_solid,
-                        color: Colors.red,);
+                        color: CupertinoColors.secondarySystemFill,);
                         }),
                     CupertinoButton(child: const Icon(CupertinoIcons.share_up,
                       color: CupertinoColors.destructiveRed,),
