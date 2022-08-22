@@ -75,6 +75,7 @@ class _SecondPageState extends State<SecondPage> {
       print(indexNo);
     }
   }
+  bool isFavourite = false;
 
   @override
   Widget build(BuildContext context)
@@ -139,9 +140,14 @@ class _SecondPageState extends State<SecondPage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    CupertinoButton(child: const Icon(CupertinoIcons.heart,
-                        color: CupertinoColors.destructiveRed),
-                        onPressed: (){}),
+                    IconButton(
+                      color: isFavourite ?
+                      CupertinoColors.destructiveRed : CupertinoColors.darkBackgroundGray,
+                      icon: const Icon(CupertinoIcons.heart_solid,
+                    ),
+                      onPressed: () {setState(()
+                      {isFavourite = !isFavourite;});
+                      },),
                     CupertinoButton(child: const Icon(CupertinoIcons.share_up,
                       color: CupertinoColors.destructiveRed,),
                         onPressed: (){
@@ -163,6 +169,16 @@ class _SecondPageState extends State<SecondPage> {
                         }),
                   ],
                 ),
+                // IconButton(
+                //     icon: Icon(Icons.favorite,
+                //         size: 30.0,
+                //         color: isFavourite ? Colors.red
+                //             : Color.fromARGB(255, 114, 113, 113)),
+                //     onPressed: () {
+                //       setState(() {
+                //         isFavourite = !isFavourite;
+                //       });
+                //     }),
               ],
             ),
           ),
